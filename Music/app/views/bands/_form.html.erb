@@ -1,0 +1,22 @@
+<%= form_for(@band) do |f| %>
+	<ul>
+		<% @band.errors.full_messages.each do |error| %>
+			<li><%= error%></li>
+		<% end %>
+	</ul>
+
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<br />
+
+	<%= f.label :genre %>
+	<%= f.text_field :genre %>
+	<br />
+
+	<%= f.label :location %>
+	<%= f.text_field :location %>
+	<br />
+
+	<%= f.submit "Create Band Listing" %>
+
+<% end %>
