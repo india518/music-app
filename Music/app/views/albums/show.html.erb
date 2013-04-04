@@ -1,0 +1,10 @@
+<h1><%= @album.title %></h1>
+
+<p>Band: <%= link_to @album.band.name, band_url(@album.band.id) %>
+</p>
+
+	<p> <%= link_to "Edit #{@album.title} information", edit_album_url(@album) %></p>
+
+	<p> <%= link_to "Delete #{@album.title}", album_url(@album), :method => :delete,
+		              confirm: "Really delete #{@album.title}?" %></p>
+	<p> <%= link_to "<< Back to All Albums", albums_url %>

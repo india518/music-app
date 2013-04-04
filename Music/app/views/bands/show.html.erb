@@ -2,10 +2,12 @@
 <p>Genre: <%= @band.genre %></p>
 <p>Location: <%= @band.location %></p>
 
+<% unless @band.members.empty? %>
 <p>Members: <% @band.members.each do |artist| %>
 	<%= link_to artist.name, artist_path(artist.id) %>
 	<% end %>
 </p>
+<% end %>
 
 <p> <%= link_to "Edit #{@band.name} information", edit_band_url(@band) %></p>
 

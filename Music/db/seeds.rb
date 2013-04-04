@@ -31,4 +31,23 @@ ActiveRecord::Base.transaction do
 		g.gender_name = name
 		g.save
 	end
+
+	["Album 1", "Sophomore Album", "Green Album"].each do |name|
+		Album.create(:title => name,
+								 :band_id => Band.all.sample.id,
+								 :release_date => rand_time)
+	end
+
+
+	["Sing", "Sing a Song", "Sing Out Loud", "Sing Out Strong"].each do |name|
+		Song.create(:title => name,
+								:writer_id => Artist.all.sample.id)
+	end
+
+	Album.all.each do |album|
+		Song.all.each do |song|
+			Track.create(song_id: song.id, album_id: album.id)
+		end
+	end
+
 end

@@ -1,0 +1,5 @@
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :band %>
+<%= f.collection_select :band_id, Band.all, :id, :name %>
