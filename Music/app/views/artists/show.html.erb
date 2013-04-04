@@ -1,6 +1,10 @@
 <h1><%= @artist.name %></h1>
-<p><%= @artist.date_of_birth %></p>
-<p><%= @artist.gender %></p>
-<p><%= @artist.bands.map {|band| band.to_s }.join(", ") %></p>
+<p>Birthday: <%= @artist.date_of_birth %></p>
+<p>Gender: <%= @artist.gender %></p>
 
-<p> <%= link_to "Back to All Artists", artists_path %>
+<p>Bands: <% @artist.bands.each do |band| %>
+	<%= link_to band.name, band_url(band.id) %>
+	<% end %>
+</p>
+
+<p> <%= link_to "<< Back to All Artists", artists_path %>

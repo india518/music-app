@@ -4,4 +4,7 @@ class Artist < ActiveRecord::Base
   has_many :memberships
 	has_many :bands, :through => :memberships
 
+	def to_s
+		name
+	end
 end
