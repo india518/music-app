@@ -7,4 +7,8 @@
 	<% end %>
 </p>
 
-<p> <%= link_to "<< Back to All Bands", bands_path %>
+<p> <%= link_to "Edit #{@band.name} information", edit_band_url(@band) %></p>
+
+<p> <%= link_to "Delete #{@band.name}", band_url(@band), :method => :delete,
+	              confirm: "Really delete #{@band.name}?" %></p>
+<p> <%= link_to "<< Back to All Bands", bands_url %>

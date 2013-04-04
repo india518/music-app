@@ -1,9 +1,9 @@
-<h1>Enter Band Information</h1>
+<h1>Edit the Band Information</h1>
 
 <%= form_for(@band) do |f| %>
 
 	<%= render partial: 'form', :locals => {:f => f } %>
 
-	<%= f.submit "Create Band Listing" %>
+	<%= f.submit "Update Band Listing" %>
 
 <% end %>
