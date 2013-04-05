@@ -4,12 +4,14 @@
 </p>
 Tracks:
 <ul> <% @album.songs.each do |song| %>
-	<li><%= link_to song.title, song_path(song.id) %></li>
+	<li><%= song.title %></li>
 	<% end %>
 </ul>
 
-	<p> <%= link_to "Edit #{@album.title} information", edit_album_url(@album) %></p>
+	<p> <%= link_to "Edit #{@album.title} information",
+		      edit_album_url(@album) %></p>
 
-	<p> <%= link_to "Delete #{@album.title}", album_url(@album), :method => :delete,
-		              confirm: "Really delete #{@album.title}?" %></p>
+	<p> <%= link_to "Delete #{@album.title}", album_url(@album),
+		      :method => :delete, confirm: "Really delete #{@album.title}?" %></p>
+
 	<p> <%= link_to "<< Back to All Albums", albums_url %>

@@ -1,0 +1,8 @@
+<h1>Create New Track</h1>
+
+<%= form_for @track do |f|%>
+
+<%= render partial: 'form', :locals => {:f => f} %>
+<%= f.submit "Create" %>
+
+<% end %>

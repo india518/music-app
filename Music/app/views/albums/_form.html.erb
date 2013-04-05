@@ -5,11 +5,11 @@
 <%= f.collection_select :band_id, Band.all, :id, :name %>
 	<br \>
 
-	<%= radio_button_tag "album[is_live]", false, !@album.is_live? %>
-	<%= f.label "is_live", "Studio", :value => false %>
+	<%= f.radio_button :is_live, 0, :checked => !@album.is_live?%>
+	<%= f.label :is_live_0, "Studio" %>
 
-	<%= radio_button_tag "album[is_live]", true, @album.is_live? %>
-	<%= f.label "is_live", "Live", :value => true %>
+	<%= f.radio_button :is_live, 1, :checked => @album.is_live? %>
+	<%= f.label :is_live_1, "Live" %>
 	<br \>
 
 <% Song.all.each do |song| %>

@@ -3,5 +3,9 @@ class Track < ActiveRecord::Base
 
   belongs_to :album
 	belongs_to :song
+	has_one :title, :through => :song
 
+	def title
+		song.title
+	end
 end

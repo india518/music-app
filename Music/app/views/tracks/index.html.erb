@@ -1,0 +1,9 @@
+<h1>All Tracks</h1>
+
+<ul>
+	<% @tracks.each do |track| %>
+		<li><%= link_to track.song.title, track_url(track) %></li>
+	<% end %>
+</ul>
+
+<%= link_to "Create New Track", new_track_url %>
