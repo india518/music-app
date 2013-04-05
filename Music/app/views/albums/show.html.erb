@@ -2,6 +2,11 @@
 
 <p>Band: <%= link_to @album.band.name, band_url(@album.band.id) %>
 </p>
+Tracks:
+<ul> <% @album.songs.each do |song| %>
+	<li><%= link_to song.title, song_path(song.id) %></li>
+	<% end %>
+</ul>
 
 	<p> <%= link_to "Edit #{@album.title} information", edit_album_url(@album) %></p>
 

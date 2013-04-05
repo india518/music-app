@@ -35,7 +35,8 @@ ActiveRecord::Base.transaction do
 	["Album 1", "Sophomore Album", "Green Album"].each do |name|
 		Album.create(:title => name,
 								 :band_id => Band.all.sample.id,
-								 :release_date => rand_time)
+								 :release_date => rand_time,
+								 :is_live => false)
 	end
 
 

@@ -3,3 +3,31 @@
 
 <%= f.label :band %>
 <%= f.collection_select :band_id, Band.all, :id, :name %>
+	<br \>
+
+	<%= radio_button_tag "album[is_live]", false, !@album.is_live? %>
+	<%= f.label "is_live", "Studio", :value => false %>
+
+	<%= radio_button_tag "album[is_live]", true, @album.is_live? %>
+	<%= f.label "is_live", "Live", :value => true %>
+	<br \>
+
+<% Song.all.each do |song| %>
+
+  <%= check_box_tag(
+	      "album[song_ids][]", #this is a hash, where
+				                     # album[song_id] is the key
+														 # [] is the value
+				song.id,
+				@album.song_ids.include?(song.id),
+				:id => "album_song_ids_#{song.id}"
+			) %>
+
+	<%= label_tag "album_song_ids_#{song.id}", song.title %>
+
+	<br>
+
+<% end %>
+
+<% hidden_field_tag "album[song_ids][]" %>
+
